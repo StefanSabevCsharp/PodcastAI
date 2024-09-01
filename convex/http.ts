@@ -17,7 +17,7 @@ const handleClerkWebhook = httpAction(async (ctx, request) => {
         clerkId: event.data.id,
         email: event.data.email_addresses[0].email_address,
         imageUrl: event.data.image_url,
-        name: event.data.first_name as string,
+        name: event.data.first_name!,
       });
       break;
     // case "user.updated":
@@ -49,7 +49,6 @@ http.route({
 const validateRequest = async (
   req: Request
 ): Promise<WebhookEvent | undefined> => {
-  // key note : add the webhook secret variable to the environment variables field in convex dashboard setting
   const webhookSecret = process.env.CLERK_WEBHOOK_SECRET!;
   if (!webhookSecret) {
     throw new Error("CLERK_WEBHOOK_SECRET is not defined");
