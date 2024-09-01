@@ -28,7 +28,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConvexClerkProvider>
           {children}
-        </ConvexClerkProvider></body>
+        </ConvexClerkProvider>
+      </body>
     </html>
   );
 }

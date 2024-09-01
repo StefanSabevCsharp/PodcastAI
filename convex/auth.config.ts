@@ -1,6 +1,6 @@
 // https://renewed-ox-99.clerk.accounts.dev
 
-export default {
+const authConfig = {
     providers: [
       {
         domain: "https://renewed-ox-99.clerk.accounts.dev",
@@ -8,3 +8,5 @@ export default {
       },
     ]
   };
+
+  export default authConfig;
